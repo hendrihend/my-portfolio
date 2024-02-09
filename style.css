@@ -1,3 +1,4 @@
+/* Reset all bodies */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* Navbar */
 .navbar {
     width: 100%;
     background-image: linear-gradient( to top, salmon, blueviolet );
@@ -28,30 +30,22 @@
     margin: 1rem;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-}
+.navbar ul li a { text-decoration: none; }
 
 /* header */
-.header {
-    background-image: linear-gradient( to bottom, salmon, blueviolet );
-}
+.header { background-image: linear-gradient( to bottom, salmon, blueviolet ); }
 
 .about,
 .skill,
 .academy,
-.contact { 
-    font-size: 1.2rem;
-}
-.card.academy {
-    font-size: 1rem;
-}
+.contact { font-size: 1.2rem; }
+
+.card.academy { font-size: 1rem; }
+
 .about h2,
 .skill h2,
 .academy h2,
-.contact h2 {
-    text-align: center;
-}
+.contact h2 { text-align: center; }
 
 .about .horizontal-line,
 .skill .horizontal-line,
@@ -75,12 +69,9 @@
 .academy .container,
 .contact .container {
     width: 100%;
-    /* min-height: 100vh; */
     display: flex;
-    /* padding: 3rem; */
     align-items: center;
     justify-content: center;
-    /* text-align: center; */
     box-sizing: border-box;
 }
 
@@ -89,7 +80,6 @@
     margin: 10px;
     width: 50%;
 }
-
 .header .container .pict img {
     width: 60%;
     margin: 4.9rem;
@@ -97,14 +87,12 @@
     box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-/* card */
+/* container card */
 .container {
     display: flex;
     justify-content: space-evenly;
 }
 .container .card {
-    /* background-image: linear-gradient(to top, salmon, blueviolet); */
     padding: 1rem;
     box-sizing: border-box;
     margin: .5rem;
@@ -115,9 +103,7 @@
     list-style: none;
     margin: 1rem;
 }
-.container .card.links ul li a {
-    text-decoration: none;
-}
+.container .card.links ul li a { text-decoration: none; }
 
 /* Footer */
 footer {
@@ -128,24 +114,19 @@ footer {
 
 /* Slide show container */
 .slideshow-container {
-    /* min-height: 100vh; */
     position: relative;
     margin: auto;
   }
 
 /* Hide background by default */
-.mySlides {
-    display: none;
-}
+.mySlides { display: none; }
 
 /* Next & previous buttons */
-
 .header .prev, .next {
     cursor: pointer;
     position: absolute;
-    /* top: 50%; */
     width: auto;
-    padding: 10rem;
+    padding: 0;
     color: black;
     font-weight: bold;
     font-size: 2.5rem;
@@ -153,13 +134,11 @@ footer {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-.prev {
-    margin-left: 5.5rem;
-}
-.next {
+.header .prev { margin-left: 5.5rem; }
+.header .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-    /* margin-right: 7rem; */
+    margin-right: 10rem;
 }
 
 .fade {
@@ -172,25 +151,17 @@ footer {
     to {opacity: 1}
   }
 
-  /* Animations */
-.navbar, footer {
-    /* animation-name: header-animation; */
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+  /* Animations star */
+.header .star .feather-star {
+    -webkit-animation: star-animation 2s infinite linear;
 }
-@keyframes header-animation {
-    from {
-        background-image: linear-gradient( to top, salmon, blueviolet );
-    }
-    to {
-        background-image: linear-gradient( to bottom, salmon, blueviolet );
-    }
-    /* from% {background-image: linear-gradient( to top, salmon, blueviolet );}
-    75% {background-image: linear-gradient( to bottom, salmon, blueviolet );}
-    100% {background-image: linear-gradient( to top, salmon, blueviolet );} */
+@-webkit-keyframes star-animation {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
 }
 
-.header .container .pict img {
+/* Animations background and box shadow */
+.header .container .pict img, .star .feather-star {
     animation-name: profile-animation;
     animation-duration: .7s;
     animation-iteration-count: infinite;
@@ -203,7 +174,6 @@ footer {
     75% {box-shadow: 2px 0 15px 6px purple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
     100% {box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
 }
-
 
 .header .prev, .next {
     color: salmon;
@@ -222,46 +192,22 @@ footer {
 
 /* Hover */
 .header .container .pict img:hover,
-.header .prev:hover, .next:hover {
-    animation-duration: .3s;
-}
+.header .prev:hover, .next:hover { animation-duration: .3s; }
 
-
-  
 /* Media Query */
-  /* On smaller screens, decrease text size */
-  /* @media only screen and (max-width: 300px) {
-  .prev, .next {font-size: 11px}
-  } */
-  
 /* Tablet */
 @media only screen and (max-width: 768px) {
-    .navbar .logo {
-        width: 100%;
-    }
-    .navbar .logo h1 {
-        margin: auto;
-    }
-    .navbar ul {
-        margin-right: 1rem;
-    }
-
-    .header .container .pict {
-        width: 100%;
-    }
+    .navbar .logo { width: 100%; }
+    .navbar .logo h1 { margin: auto; }
+    .navbar ul { margin-right: 1rem; }
+    .header .container .pict { width: 100%; }
 }
 
 /* Mobile */
 @media only screen and (max-width: 576px) {
-    .navbar .logo {
-        width: 100%;
-    }
-    .navbar .logo h1 {
-        margin: auto;
-    }
+    .navbar .logo { width: 100%; }
+    .navbar .logo h1 { margin: auto; }
     .navbar ul {
-        /* flex-wrap: wrap; */
-        /* display: none; */
         position: absolute;
         flex-direction: column;
         left: -.5rem;
@@ -278,7 +224,6 @@ footer {
         cursor: pointer;
         z-index: 1;
     }
-
     .navbar ul li:hover {
         margin-left: 0;
         text-align: center;
@@ -292,7 +237,6 @@ footer {
         order: 2;
         text-align: center;
         width: 100%;
-        /* margin-top: -5rem; */
     }
     .header .container .pict {
         order: 1;
@@ -300,18 +244,22 @@ footer {
     }
 
     .header .prev, .next {
-        /* width: 10%; */
         font-size: 1.5rem;
-        padding: 5rem;
-        top: 33%;
-        /* margin-right: 7rem; */
-        /* margin-left: -1rem; */
+        padding: 0;
+        top: 47%;
     }
-    .header .prev {
-        margin-left: -23.5rem;
-    }
-    .header .next {
-        margin-right: 1.1rem;
-    }
-
+    .header .prev { margin-left: -20rem; }
+    .header .next { margin-right: 6rem; }
 }
+
+/* Smaller screen */
+@media only screen and (max-width: 360px) {
+    .header .prev, .next {
+        font-size: 1.5rem;
+        padding: 0;
+        top: 35%;
+    }
+    .header .prev { margin-left: -12.6rem; }
+    .header .next { margin-right: 3rem; }
+}
+
