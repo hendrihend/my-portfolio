@@ -9,31 +9,37 @@
 /* Navbar */
 .navbar {
     width: 100%;
-    background-image: linear-gradient( to top, salmon, blueviolet );
+    background-image: linear-gradient( to top, rgb(223, 101, 87), blueviolet );
     padding: .5rem;
     display: flex;
     justify-content: space-between;
+    position: fixed;
 }
-
 .navbar .logo {
     width: 25%;
     align-items: center;
 }
-
 .navbar .logo, ul {
     display: flex;
     margin: 0 auto;
 }
-
 .navbar ul li {
     list-style: none;
     margin: 1rem;
+    font-weight: bold;
 }
+.navbar ul li a { 
+    text-decoration: none;
+    transition: .3s;
+}
+.navbar ul li a:hover { color: black; }
 
-.navbar ul li a { text-decoration: none; }
 
 /* header */
-.header { background-image: linear-gradient( to bottom, salmon, blueviolet ); }
+.header { 
+    background-image: linear-gradient( to bottom, rgb(223, 101, 87), blueviolet ); 
+    box-sizing: border-box;
+}
 
 .about,
 .skill,
@@ -109,7 +115,7 @@
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-image: linear-gradient(to top, salmon, blueviolet);
+    background-image: linear-gradient(to top, rgb(223, 101, 87), blueviolet);
 }
 
 /* Slide show container */
@@ -265,7 +271,7 @@ footer {
     .header .prev, .next {
         font-size: 1.5rem;
         padding: 0;
-        top: 47%;
+        top: 40%;
     }
     .header .prev { margin-left: -20rem; }
     .header .next { margin-right: 6rem; }
@@ -273,12 +279,14 @@ footer {
 
 /* Smaller screen */
 @media only screen and (max-width: 360px) {
+    .header { min-height: 100vh; }
     .header .prev, .next {
         font-size: 1.5rem;
         padding: 0;
-        top: 35%;
+        top: 29%;
     }
     .header .prev { margin-left: -12.6rem; }
     .header .next { margin-right: 3rem; }
+    footer { font-size: 0.95rem; }
 }
 
