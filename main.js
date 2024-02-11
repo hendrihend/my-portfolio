@@ -34,3 +34,30 @@ function showSlides(n) {
 // Ketika tombol Prev & next di klik
 btnPrev.addEventListener('click', () => { plusSlides(-1); });
 btnNext.addEventListener('click', () => { plusSlides(1); });
+
+// Nav Links
+function openSection(e, sectionName) {
+    let i, tabContent, navLinks;
+    tabContent = document.querySelectorAll('.tab-content');
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = 'none';
+    }
+    navLinks = document.querySelectorAll('.nav-link');
+    for (i = 0; i < navLinks; i++) {
+        navLinks[i].className = navLinks[i].className.replace(' active', '');
+    }
+    document.getElementById(sectionName).style.display = 'block';
+    e.currentTarget.className += ' active';
+}
+
+// Ketika Navbar di klik
+let navAbout = document.querySelector('#nav-about');
+let navSkill = document.querySelector('#nav-skill');
+let navAcademy = document.querySelector('#nav-academy');
+let navContact = document.querySelector('#nav-contact');
+
+navAbout.addEventListener('click', () => { openSection(event, 'about'); });
+navSkill.addEventListener('click', () => { openSection(event, 'skill'); });
+navAcademy.addEventListener('click', () => { openSection(event, 'academy'); });
+navContact.addEventListener('click', () => { openSection(event, 'contact'); });
+
