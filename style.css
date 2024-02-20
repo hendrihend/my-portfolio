@@ -39,6 +39,7 @@
 .header { 
     background-image: linear-gradient( to bottom, rgb(223, 101, 87), blueviolet ); 
     box-sizing: border-box;
+    min-height: 100vh;
 }
 
 .about,
