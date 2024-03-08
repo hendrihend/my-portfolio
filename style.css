@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
+    z-index: 1;
 }
 .navbar .logo {
     width: 25%;
@@ -39,7 +40,13 @@
 .header { 
     background-image: linear-gradient( to bottom, rgb(223, 101, 87), blueviolet ); 
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 90.3vh;
+}
+.header .header-waves {
+    margin-bottom: -17rem;
+}
+.header .footer-waves {
+    margin-top: -17rem;
 }
 
 .about,
@@ -82,16 +89,18 @@
     box-sizing: border-box;
 }
 
-.header .container .pict {
+/* .header .container .pict {
     padding: .5rem;
     margin: 10px;
     width: 50%;
-}
-.header .container .pict img {
-    width: 60%;
+} */
+.header .container img {
+    width: 30%;
     margin: 4.9rem;
-    border-radius: 100%;
-    box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: .5em;
+    /* filter: drop-shadow( 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19 )); */
+    filter: drop-shadow(5px 5px 5px rebeccapurple);
+    -webkit-filter: drop-shadow(5px 5px 5px rebeccapurple);
 }
 
 /* container card */
@@ -100,7 +109,7 @@
     justify-content: space-evenly;
 }
 .container .card {
-    padding: 1rem;
+    padding: .3rem;
     box-sizing: border-box;
     margin: .5rem;
     line-height: 1.5rem;
@@ -141,11 +150,11 @@ footer {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-.header .prev { margin-left: 5.5rem; }
+.header .prev { margin-left: 10em; }
 .header .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-    margin-right: 10rem;
+    margin-right: 2em;
 }
 
 .fade {
@@ -187,18 +196,23 @@ footer {
 }
 
 /* Animations background and box shadow */
-.header .container .pict img, .star .feather-star {
+.header .container img, .star .feather-star {
     animation-name: profile-animation;
     animation-duration: .7s;
     animation-iteration-count: infinite;
     cursor: pointer;
 }
 @keyframes profile-animation {
-    0% {box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
-    25% {box-shadow: 2px 0 15px 6px purple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
-    50% {box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
-    75% {box-shadow: 2px 0 15px 6px purple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
-    100% {box-shadow: 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19);}
+    0% {filter: drop-shadow( 11px 11px 11px rebeccapurple );}
+    25% {filter: drop-shadow( 11px 11px 11px purple );}
+    50% {filter: drop-shadow( 11px 11px 11px rebeccapurple );}
+    75% {filter: drop-shadow( 11px 11px 11px purple );}
+    100% {filter: drop-shadow( 11px 11px 11px rebeccapurple );}
+    /* 0% {filter: drop-shadow( 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19) );}
+    25% {filter: drop-shadow( 2px 0 15px 6px purple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19) );}
+    50% {filter: drop-shadow( 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19) );}
+    75% {filter: drop-shadow( 2px 0 15px 6px purple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19) );}
+    100% {filter: drop-shadow( 2px 0 15px 6px rebeccapurple, 1px 6px 10px 0 rgba(0, 0, 0, 0.19) );} */
 }
 
 .header .prev, .next {
@@ -206,6 +220,7 @@ footer {
     animation-name: prev-next-button;
     animation-duration: .7s;
     animation-iteration-count: infinite;
+    z-index: 1;
 }
 
 @keyframes prev-next-button {
@@ -217,7 +232,7 @@ footer {
 }
 
 /* Hover */
-.header .container .pict img:hover,
+.header .container img:hover,
 .header .prev:hover, .next:hover { animation-duration: .3s; }
 
 /* Media Query */
@@ -227,6 +242,12 @@ footer {
     .navbar .logo h1 { margin: auto; }
     .navbar ul { margin-right: 1rem; }
     .header .container .pict { width: 100%; }
+    .header .header-waves {
+        margin-bottom: -8.5rem;
+    }
+    .header .footer-waves {
+        margin-top: -8.5rem;
+    }
 }
 
 /* Mobile */
@@ -254,6 +275,12 @@ footer {
         margin-left: 0;
         text-align: center;
     }
+    .header .header-waves {
+        margin-bottom: -7.5rem;
+    }
+    .header .footer-waves {
+        margin-top: -7.5rem;
+    }
 
     .header .container {
         flex-wrap: wrap;
@@ -264,9 +291,9 @@ footer {
         text-align: center;
         width: 100%;
     }
-    .header .container .pict {
+    .header .container img {
         order: 1;
-        width: 100%;
+        width: 60%;
     }
 
     .header .prev, .next {
@@ -281,6 +308,12 @@ footer {
 /* Smaller screen */
 @media only screen and (max-width: 360px) {
     .header { min-height: 100vh; }
+    .header .header-waves {
+        margin-bottom: -6.9rem;
+    }
+    .header .footer-waves {
+        margin-top: 1rem;
+    }
     .header .prev, .next {
         font-size: 1.5rem;
         padding: 0;
