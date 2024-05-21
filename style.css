@@ -267,9 +267,9 @@ footer {
     .navbar ul li {
         background-color: rgb(228, 85, 69);
         padding: .5rem;
-        width: 100px;
+        width: 125px;
         margin: 3px;
-        margin-left: -4.5rem;
+        margin-left: -5.7rem;
         border-radius: .5rem;
         transition: .3s;
         cursor: pointer;
